@@ -1,0 +1,332 @@
+/* Rebuilt from VTOP's VTop.css, hmenu.css, menu.css and dashboard.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Viewport lock: the page itself never scrolls, only #b5-pagewrapper does */
+html,
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    height: 100vh;
+    height: 100dvh;
+    width: 100vw;
+    width: 100dvw;
+    overflow: hidden !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(236, 240, 241);
+    color: #222;
+}
+
+/* VTOP only loads dashboard.css on the home page, which turns the background white */
+body.dashboard-page {
+    background-color: white;
+}
+
+/* Hostels > Mess Selection */
+.mess-info-table,
+.mess-info-table th,
+.mess-info-table td {
+    border: 1px solid rgb(13, 110, 253);
+}
+
+.mess-info-table,
+.mess-info-message {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.mess-info-table th,
+.mess-info-table td {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.mess-opted {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    color: #d63384;
+    font-size: 1.25rem;
+}
+
+.mess-confirmed {
+    font-size: 1.75rem;
+}
+
+@media (max-width: 767px) {
+    .mess-info-table,
+    .mess-info-message {
+        width: 100%;
+    }
+}
+
+.container-fluid,
+.container-fluid > .row,
+#page_outline {
+    height: 100%;
+}
+
+#page-holder {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#vtop-header {
+    position: relative !important;
+    top: 0;
+    width: 100%;
+    flex-shrink: 0;
+    z-index: 1051;
+}
+
+#top-hmenu-bar {
+    flex-shrink: 0;
+    z-index: 1050;
+}
+
+#vtop-body-content {
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+}
+
+#core-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+#b5wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    height: 100%;
+    min-height: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+#b5-pagewrapper {
+    flex: 1 1 auto;
+    height: 100%;
+    min-height: 0;
+    overflow: auto;
+    padding: 1rem 1rem calc(1.5rem + env(safe-area-inset-bottom)) 1rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #888888 #f1f1f1;
+}
+
+#b5-pagewrapper::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+#b5-pagewrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+#b5-pagewrapper::-webkit-scrollbar-thumb {
+    background: #888888;
+    border-radius: 4px;
+    border: 2px solid #f1f1f1;
+}
+
+/* Header */
+.headerBackgroundColor {
+    background: rgb(36, 85, 163);
+    background: linear-gradient(130deg, rgba(36, 85, 163, 1) 23%, rgba(52, 151, 219, 1) 52%, rgba(52, 142, 219, 1) 58%, rgba(52, 131, 219, 1) 65%, rgba(40, 116, 166, 1) 74%);
+}
+
+.VITLogoStyle {
+    font-family: Times, 'Times New Roman', serif;
+}
+
+.VITEmblem {
+    width: 40px;
+    height: 40px;
+}
+
+@media screen and (max-width: 767px) {
+    .VITEmblem {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.img_icon_size {
+    width: 40px;
+    height: 40px;
+}
+
+.img_stamp_size {
+    width: 100px;
+    height: 100px;
+}
+
+.avatar-placeholder {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #fff;
+}
+
+.img_icon_size.avatar-placeholder {
+    font-size: 22px;
+}
+
+.img_stamp_size.avatar-placeholder {
+    font-size: 56px;
+}
+
+.dropdownMenuBoxWidth {
+    width: 300px;
+}
+
+.menuFontStyle {
+    font-size: 14px;
+}
+
+.iconSpace {
+    width: 25px;
+}
+
+/* Horizontal menu */
+.rotate-caret {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.overlay-window {
+    z-index: 999;
+}
+
+.horizontal-menu-color {
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: rgb(222, 184, 135);
+    background-color: rgb(255, 255, 255);
+}
+
+.menuBorderStyle {
+    border-width: 0 0 5px 0;
+    border-color: rgb(158, 158, 158);
+    border-style: solid;
+}
+
+.WhiteBackground {
+    background-color: rgb(255, 255, 255);
+}
+
+.list-group-item.list-group-item-action:hover {
+    background-color: #E0E7FF;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .hmenubox {
+        min-height: 900px;
+        height: 900px;
+    }
+}
+
+/* Colour helpers */
+.fg-black {
+    color: rgb(0, 0, 0);
+}
+
+.primaryColor1 {
+    color: rgb(51, 122, 183);
+}
+
+.primaryBorderTop {
+    border-width: 3px 0 0 0;
+    border-style: solid;
+    border-color: rgb(92, 172, 218);
+}
+
+.hightlight1 {
+    color: rgb(144, 12, 63);
+}
+
+.subtitle {
+    color: #005580;
+}
+
+.fontcolor1 {
+    color: rgb(0, 108, 185);
+}
+
+.fontcolor3 {
+    color: rgb(130, 0, 0);
+}
+
+.fontcolor5 {
+    color: rgb(184, 134, 11);
+}
+
+.goldenBorderTop {
+    border-width: 3px 0 0 0;
+    border-style: solid;
+    border-color: rgb(245, 203, 167);
+}
+
+.lightGoldenbackground2 {
+    background-color: rgb(252, 251, 245);
+}
+
+.courseData {
+    height: 300px;
+}
+
+.b3ModalLayer {
+    z-index: 30000000;
+}
+
+/* Loading overlay shown while a menu page "loads" */
+#popup {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#popup.noshow {
+    display: none;
+}
+
+@media print {
+    #vtop-header,
+    #top-hmenu-bar {
+        display: none !important;
+    }
+
+    html,
+    body,
+    #b5-pagewrapper {
+        overflow: visible !important;
+        height: auto !important;
+    }
+}
