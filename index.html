@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VIT Vellore - VTOP</title>
+    <link rel="icon" type="image/png" href="assets/VITLogoEmblem.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/vtop.css">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 p-0 m-0" id="page_outline">
+            <div id="page-holder">
+
+                <!-- Header bar -->
+                <nav class="navbar navbar-expand-lg py-1 m-0 py-md-0 navbar-light bg-light headerBackgroundColor" id="vtop-header">
+                    <div class="container-fluid px-1 mx-1">
+
+                        <div class="d-flex justify-content-start">
+                            <a class="navbar-brand mx-1" href="#" data-action="home">
+                                <img src="assets/VITLogoEmblem.png" class="img-responsive VITEmblem" alt="VIT emblem">
+                            </a>
+                            <a class="navbar-brand VITLogoStyle mx-1 text-light align-middle" href="#" data-action="home"><span class="h1 fw-bold">VIT</span></a>
+                            <span class="navbar-text mx-1 text-light mt-md-2">(Vellore Campus)</span>
+                        </div>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#vtopHeaderBarControl" aria-controls="vtopHeaderBarControl" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="vtopHeaderBarControl">
+
+                            <div class="d-inline-block me-auto" id="quickLinks">
+                                <a class="navbar-text px-2 align-middle" href="#" data-action="home" title="Home"><i class="bi bi-house-door text-light ps-sm-3 h4" aria-hidden="true"></i></a>
+                                <a class="navbar-text px-2 align-middle" href="#" id="printVTOPCoreDocument" title="Print"><i class="bi bi-printer text-light ps-sm-3 h4" aria-hidden="true"></i></a>
+
+                                <button class="btn btn-sm btn-outline ps-3" data-bs-toggle="tooltip" data-bs-placement="top" title="add this menu to favourites" id="favouriteBtn">
+                                    <span class="text-light"><i class="bi bi-star-half h4"></i></span>
+                                </button>
+                                <div class="dropdown d-inline-block">
+                                    <button class="btn btn-outline-primary btn-sm dropdown-toggle text-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="text-light">Quick Links</span>
+                                    </button>
+                                    <ul class="dropdown-menu" id="quickLinksMenu"></ul>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-outline-info text-light" id="campusEtiquetteBtn">
+                                <i class="bi bi-emoji-heart-eyes fs-5 me-1"></i>Campus Etiquette
+                            </button>
+
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item d-none d-sm-inline-block">
+                                    <span class="img-circle img_icon_size avatar-placeholder"><i class="bi bi-person-fill"></i></span>
+                                </li>
+                                <li class="nav-item dropdown d-none d-sm-inline-block">
+                                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="navbar-text text-light small fw-bold" data-field="userLabel"></span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end headerBackgroundColor dropdownMenuBoxWidth" aria-labelledby="navbarDropdown">
+                                        <li class="dropdown-item disabled text-center"><span class="img-circle img_stamp_size avatar-placeholder"><i class="bi bi-person-fill"></i></span></li>
+                                        <li class="dropdown-item disabled text-center"><span class="dropdown-item text-light" data-field="userName"></span></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li class="dropdown-item bg-transparent">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-sm btn-info" type="button" data-action="history">Login History</button>
+                                                <button class="btn btn-success" type="button" data-action="signout">Sign out</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- Mobile-only copy of the user block -->
+                                <li class="nav-item text-center d-block d-sm-none"><span class="img-circle img_stamp_size avatar-placeholder"><i class="bi bi-person-fill"></i></span></li>
+                                <li class="nav-item text-center d-block d-sm-none">
+                                    <span class="navbar-text text-light small fw-bold" data-field="userLabel"></span>
+                                </li>
+                                <li class="nav-item bg-transparent d-block d-sm-none">
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-sm btn-info" type="button" data-action="history">Login History</button>
+                                        <button class="btn btn-sm btn-success" type="button" data-action="signout">Sign out</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Horizontal menu bar; items and drop-down panels are rendered by js/app.js -->
+                <nav class="navbar navbar-expand-lg navbar-light horizontal-menu-color shadow-sm d-flex flex-column position-relative" id="top-hmenu-bar">
+                    <div class="px-3 d-flex flex-nowrap w-100 overflow-auto justify-content-center justify-content-md-start mx-3" id="hmenuItems"></div>
+                    <div class="w-100" id="hmenuPanels"></div>
+                </nav>
+
+                <div class="d-flex position-relative" id="vtop-body-content">
+                    <div id="core-container">
+                        <div id="b5wrapper">
+                            <div id="b5-pagewrapper"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Loading overlay -->
+<div class="noshow" id="popup">
+    <div class="card">
+        <div class="card-header">
+            <span class="h6 fw-bold">Loading... Please Wait</span>
+        </div>
+        <div class="card-body text-center">
+            <img src="assets/ajax-loader.gif" class="img-fluid" alt="Loading">
+        </div>
+    </div>
+</div>
+
+<!-- VTOP's own "under construction" modal, reused for anything not rebuilt yet -->
+<div class="modal fade" id="myModalFooter" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-primary">Sorry !!!</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger">This page is under Construction !!! Please try later</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
